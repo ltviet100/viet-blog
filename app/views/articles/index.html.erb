@@ -1,12 +1,21 @@
-<h1>All Articles</h1>
-<p>
-  <%= link_to "New Article", new_article_path %>
-</p>
+<!-- <p> -->
+  <%#= link_to "New Article", new_article_path %>
+<!-- </p> -->
 
-<% @articles.each do |article| %>
-  <h2><%= link_to article.title, article %></h2>
-  <p><%= article.description %></p>
-  <p><%= link_to 'Edit', edit_article_path(article) %></p>
-  <p><%= link_to 'Show', article_path(article) %></p>
-  <p><%= link_to 'Delete', article_path(article),method: :delete, data: { confirm: "Are you sure?" } %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-10">
+    <% @articles.each do |article| %>
+      <h2><%= link_to article.title, article, id:"title-article" %></h2>
+      <p id="more-info">By: Le Thanh Viet | <%= time_ago_in_words(article.created_at) %></p>
+
+
+      <p class="article-description"><%= sanitize(article.description) %></p>
+      <hr>
+    <% end %>
+  </div>
+
+  <div class="col-md-2">
+    <%= render 'shared/sidebar' %>
+  </div>
+</div>
+
