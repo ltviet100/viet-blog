@@ -6,7 +6,7 @@
   <div class="col-md-10">
     <% @articles.each do |article| %>
       <h2><%= link_to article.title, article, id:"title-article" %></h2>
-      <p id="more-info">By: Le Thanh Viet | <%= time_ago_in_words(article.created_at) %></p>
+      <p id="more-info">By: <%= article.username if  article.user %> | <%= time_ago_in_words(article.created_at) %> ago</p>
 
 
       <p class="article-description"><%= sanitize(article.description) %></p>
