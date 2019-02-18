@@ -6,5 +6,5 @@ class User < ApplicationRecord
               length: { maximum: 255 },
               format: { with: VALID_EMAIL_REGEX  }
   has_many :articles
-  validates :user_id, presence: true
+  has_secure_password
 end
