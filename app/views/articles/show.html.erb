@@ -1,6 +1,19 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.description %></p>
+<!-- <p> -->
+  <%#= link_to "New Article", new_article_path %>
+<!-- </p> -->
 
-<%= link_to "Edit this article", edit_article_path(@article) %> |
+<div class="row">
+  <div class="col-md-10">
+    <div class="detail-article">
+      <h2><%= @article.title %></h2>
+      <p><%= sanitize (@article.description) %></p>
+      <%= link_to 'Edit', edit_article_path, class:"btn btn-primary" %>
+      <%= link_to 'Remove', article_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
 
-<%= link_to "Back to articles listing", articles_path %>
+  <div class="col-md-2">
+    <%= render 'shared/sidebar' %>
+  </div>
+</div>
+

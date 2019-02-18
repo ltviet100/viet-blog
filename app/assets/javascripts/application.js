@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require bootstrap-sprockets
+// = require toastr
+//= require ckeditor/init
 //= require activestorage
 //= require turbolinks
 //= require_tree .

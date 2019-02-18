@@ -1,0 +1,9 @@
+<% if @article.errors.any? %>
+  <% @article.errors.full_messages.each do |msg| %>
+    <ul>
+      <div class="alert alert-danger" role="alert">
+        <%= msg %>
+      </div>
+    </ul>
+  <% end %>
+<% end %>

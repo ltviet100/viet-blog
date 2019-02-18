@@ -1,0 +1,66 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "toastr";
+
+#logo {
+  width: 60px;
+  height: 60px;
+  margin-top: -13px;
+}
+
+.navbar-default {
+  height: 65px !important;
+  background-color: #ef5350 !important;
+}
+
+.body {
+  background-color: #BDBDBD;
+}
+
+#title-article:link,
+#title-article:visited {
+  text-decoration: none;
+  color: #212121;
+}
+
+#title-article:hover,
+#title-article:active {
+  color: #ef5350;
+}
+
+h2 {
+  font-weight: 350;
+}
+
+
+.navbar-nav li a {
+  color: #fff !important;
+}
+
+.dropdown-menu li a {
+  color: #37474F !important;
+}
+
+.panel-heading {
+  background-color: #ef5350 !important;
+  color: #fff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.article-description {
+  text-align: justify;
+  font-size: 16px;
+}
+
+#more-info {
+  font-size: 12px;
+  color: #90A4AE;
+  font-style: italic;
+}
+
+.detail-article {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
