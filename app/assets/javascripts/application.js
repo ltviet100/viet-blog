@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 // = require toastr
 //= require ckeditor/init
+//= require about
 //= require activestorage
 //= require turbolinks
 //= require_tree .
