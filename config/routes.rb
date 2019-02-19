@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'users/edit'
   mount Ckeditor::Engine => '/ckeditor'
-  root 'articles#index'
+  root 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   resources :articles
