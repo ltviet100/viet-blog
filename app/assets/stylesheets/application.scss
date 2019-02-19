@@ -72,10 +72,6 @@ h2 {
   padding: 10px;
 }
 
-.jumbotron {
-  background-color: #ffcdd2 !important;
-}
-
 footer {
   background-color: #ef5350;
   text-align: center;
@@ -146,4 +142,15 @@ footer {
 
 .pagination {
   padding-bottom: 20px;
+}
+
+.jumbotron {
+  background-image: url('cover-image.jpeg');
+  background-position: center;
+  height: 400px;
+  background-size: cover;
+  p {
+    font-weight: 350;
+    font-size: 17px;
+    }
 }
