@@ -1,6 +1,6 @@
 <h2 class="text-center">Log In</h2>
 <div class="col-md-4 col-md-offset-4">
-  <%= form_for :session, url: 'login_path' do |f| %>
+  <%= form_for(:session, url: login_path) do |f| %>
     <div class="form-group">
       <%= f.email_field :email, class:"form-control", placeholder: "email" %>
     </div>
