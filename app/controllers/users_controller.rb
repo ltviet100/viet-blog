@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :set_user, only: [:edit, :show, :update, :destroy]
   def new
     @user = User.new
   end
@@ -7,11 +7,33 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to Viet's Blog #{@user.username}"
+      flash[:success] = "Hello #{@user.username} - Welcome to my blog!"
       redirect_to articles_path
     else
       flash[:info] = "Failed Sign Up!"
       render 'new'
     end
   end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "Updated User!"
+      redirect_to articles_path
+    else
+      flash[:info] = "Failed Update!"
+      render 'edit'
+    end
+  end
+
+  private
+    def user_params
+      params.require(:user).permit(:username, :email, :password)
+    end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 end

@@ -12,5 +12,7 @@
     <%= f.password_field :password, class:"form-control", placeholder:"password" %>
   </div>
 
-  <div><%= f.submit class:"btn btn-primary" %></div>
+  <div>
+    <%= f.submit(@user.new_record? ? "Sign Up" : "Update Account", class: "btn btn-primary") %>
+  </div>
 <% end %>
