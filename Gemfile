@@ -20,6 +20,7 @@ gem 'ckeditor', '~> 4.3'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

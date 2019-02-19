@@ -6,6 +6,7 @@
     <% @user.articles.each do |article| %>
       <div class="col-md-6 col-md-offset-2">
         <h4><%= article.title %></h4>
+        <p id="more-info">Created at: <%= time_ago_in_words(article.created_at) %> ago</p>
         <p><%= truncate(sanitize(article.description, length: 100)) %></p>
       </div>
     <% end %>
