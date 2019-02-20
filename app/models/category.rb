@@ -3,4 +3,5 @@ class Category < ApplicationRecord
             length: { minimum: 5, maximum: 25 }
   has_many :article_categories
   has_many :articles, through: :article_categories
+  delegate :title, to: :article, allow_nil: true
 end

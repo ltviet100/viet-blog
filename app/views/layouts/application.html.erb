@@ -11,10 +11,11 @@
 
   <body>
     <%= render 'shared/navigation' %>
+    <%= render 'layouts/flash_messages' %>
     <div class="container">
-      <%= render 'layouts/flash_messages' %>
       <%= yield %>
     </div>
+
     <%= render 'shared/footer' %>
   </body>
 </html>

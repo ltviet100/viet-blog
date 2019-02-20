@@ -1,9 +1,26 @@
+/* Import Bootstrap To Project */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Import Toastr Js To Custom Notification */
 @import "toastr";
 
+/* Import Font-Awesome */
 @import "font-awesome";
+
+/* Style For Navigation Bar */
+.navbar-default {
+  height: 65px !important;
+  background-color: #ef5350 !important;
+}
+
+.navbar-nav li a {
+  color: #fff !important;
+}
+
+.dropdown-menu li a {
+  color: #37474F !important;
+}
 
 #logo {
   width: 60px;
@@ -11,13 +28,20 @@
   margin-top: -13px;
 }
 
-.navbar-default {
-  height: 65px !important;
-  background-color: #ef5350 !important;
-}
 
+/* Style For Main Elements */
 .body {
   background-color: #BDBDBD;
+}
+
+
+
+h2 {
+  font-weight: 350;
+}
+
+.glyphicon-heart {
+  color: #ef5350 !important;
 }
 
 #title-article:link,
@@ -31,19 +55,11 @@
   color: #ef5350;
 }
 
-h2 {
-  font-weight: 350;
-}
 
 
-.navbar-nav li a {
-  color: #fff !important;
-}
 
-.dropdown-menu li a {
-  color: #37474F !important;
-}
 
+/* Style For Panel */
 .panel-heading {
   background-color: #ef5350 !important;
   color: #fff !important;
@@ -61,7 +77,7 @@ h2 {
   font-size: 16px;
 }
 
-#more-info {
+.more-info {
   font-size: 12px;
   color: #90A4AE;
   font-style: italic;
@@ -72,23 +88,10 @@ h2 {
   padding: 10px;
 }
 
-footer {
-  background-color: #ef5350;
-  text-align: center;
-  height: 65px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  p {
-    color: #fff;
-    padding-top: 22px;
-  }
-}
 
-.glyphicon-heart {
-  color: #ef5350 !important;
-}
 
+
+/* Style For Show About Me */
 @media (max-width: 767px) {
   .visible-xs {
     display: inline-block !important;
@@ -126,20 +129,6 @@ footer {
   list-style: none;
 }
 
-.list-group-item a:hover,
-.list-group-item a:active
- {
-  text-decoration: none;
-}
-
-.list-group-item a:link,
-.list-group-item a:visited,
-.list-group-item
- {
-  color: #37474F;
-  font-weight: bold;
-}
-
 .pagination {
   padding-bottom: 20px;
 }
@@ -147,10 +136,79 @@ footer {
 .jumbotron {
   background-image: url('cover-image.jpeg');
   background-position: center;
-  height: 400px;
+  height: 620px;
   background-size: cover;
+  p, h2 {
+    font-weight: 330;
+    color: #fff;
+  }
+
   p {
-    font-weight: 350;
-    font-size: 17px;
-    }
+    font-size: 20px;
+    margin-top: 60px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+}
+
+.badge {
+  background-color: #F9A825 !important;
+  font-weight: 350;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: background-color .3s, color .3s;
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: #F9A825;
+  }
+}
+
+.badge:hover {
+  border: 1px solid #F9A825;
+  background-color: #fff !important;
+  color: #F9A825;
+}
+
+.input-checkbox input {
+  width: auto !important;
+}
+
+.container {
+  width: 100%;
+}
+.container-fluid {
+ padding-right:0;
+ padding-left:0;
+ min-height: 100vh;
+}
+
+// .footer {
+//    width: 100%;
+//    background-color: #222223;
+//    color: white;
+//    text-align: center;
+//    height: 100%;
+// }
+
+.footer {
+  background-color: #ef5350;
+  text-align: center;
+  height: 65px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  p {
+    color: #fff;
+    padding-top: 22px;
+  }
 }

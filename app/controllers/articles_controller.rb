@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   before_action :require_exact_user, only: [:edit, :update, :destroy]
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
+    @top_articles = Article.all.order('created_at asc').limit(5)
   end
 
   def show
