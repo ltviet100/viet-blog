@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
