@@ -1,2 +1,13 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h2 class="text-center">All Categories</h2>
+<div align="center">
+  <% @categories.each do |category| %>
+    <ul class="listing">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 well">
+          <%= link_to category.name, category_path(category) %>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+  <%= will_paginate %>
+</div>
