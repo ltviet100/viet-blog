@@ -4,4 +4,6 @@ class Article < ApplicationRecord
   validates :user_id, presence: true
   belongs_to :user
   delegate :username, to: :user, allow_nil: true
+  has_many :article_categories
+  has_many :categories, through: :article_categories
 end
