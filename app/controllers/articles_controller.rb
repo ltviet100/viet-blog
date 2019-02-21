@@ -3,8 +3,11 @@ class ArticlesController < ApplicationController
   before_action :require_user, except: [:index, :show]
   before_action :require_exact_user, only: [:edit, :update, :destroy]
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
-    @top_articles = Article.all.order('created_at asc').limit(5)
+    if params[:search]
+      @articles = Article.search(params[:search]).order("created_at DESC")
+    else
+      @articles = Article.paginate(page: params[:page], per_page: 5)
+    end
   end
 
   def show

@@ -6,4 +6,8 @@ class Article < ApplicationRecord
   delegate :username, to: :user, allow_nil: true
   has_many :article_categories
   has_many :categories, through: :article_categories
+
+  def self.search(search)
+    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%") 
+  end
 end
