@@ -5,10 +5,10 @@
     </div>
   </div>
 <% else %>
+  <h2 class="text-center">All Article</h2>
   <div align="center">
     <%= will_paginate %>
   </div>
-
   <%= render 'article', obj: @articles %>
 
   <div align="center">
