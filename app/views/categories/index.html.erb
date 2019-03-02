@@ -9,7 +9,7 @@
         <div class="col-md-4 col-md-offset-4 well">
           <%= link_to category.name, category_path(category) %>
           <p><small><%= pluralize(category.articles.count, "article") %></small></p>
-          <% if logged_in? && current_user.admin? %>
+          <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
             <%= link_to 'Edit', edit_category_path(category), class:"btn btn-primary" %>
             <%= link_to 'Remove', category_path(category), method: :delete, data: { confirm: "Are you sure remove this category and all its articles!" }, class: "btn btn-danger" %>
           <% end %>
