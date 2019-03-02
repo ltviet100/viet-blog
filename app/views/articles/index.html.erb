@@ -16,7 +16,7 @@
         <% if article.categories.any? %>
           <p><strong class="more-info">Categories: </strong> <%= render article.categories %></p>
         <% end %>
-        <%= truncate sanitize(article.description, tags: [], attributes: []), length: 50 %>
+        <%= truncate sanitize(article.description, tags: [], attributes: []), length: 150 %>
         <p class="pull-right"><%= link_to 'Read More ', article_path(article)  %>&rarr;</p>
         <hr>
         <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>
