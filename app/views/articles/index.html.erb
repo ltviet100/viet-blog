@@ -5,26 +5,13 @@
     </div>
   </div>
 <% else %>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div align="center"><%= will_paginate %></div>
-      <% @articles.each do |article| %>
-        <h2><%= link_to article.title, article, id:"title-article" %></h2>
-        <p class="more-info">By: <%= article.username if  article.user %> | <%= time_ago_in_words(article.created_at) %> ago
-        </p>
-        <hr>
-        <% if article.categories.any? %>
-          <p><strong class="more-info">Categories: </strong> <%= render article.categories %></p>
-        <% end %>
-        <%= truncate sanitize(article.description, tags: [], attributes: []), length: 150 %>
-        <p class="pull-right"><%= link_to 'Read More ', article_path(article)  %>&rarr;</p>
-        <hr>
-        <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>
-          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
-          <%= link_to 'Remove', article_path(article), method: :delete, data: { confirm: "Are you sure? "}, class: "btn btn-danger"  %>
-        <% end %>
-      <% end %>
-    </div>
+  <div align="center">
+    <%= will_paginate %>
   </div>
-  <div align="center"><%= will_paginate %></div>
+
+  <%= render 'article', obj: @articles %>
+
+  <div align="center">
+    <%= will_paginate %>
+  </div>
 <% end %>
