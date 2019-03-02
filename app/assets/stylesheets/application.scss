@@ -8,10 +8,20 @@
 /* Import Font-Awesome */
 @import "font-awesome";
 
+.container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.container-fluid {
+ min-height: 100vh;
+}
+
 /* Style For Navigation Bar */
 .navbar-default {
   height: 65px !important;
   background-color: #ef5350 !important;
+  border-color: transparent !important;
 }
 
 .navbar-nav li a {
@@ -54,10 +64,6 @@ h2 {
 #title-article:active {
   color: #ef5350;
 }
-
-
-
-
 
 /* Style For Panel */
 .panel-heading {
@@ -137,6 +143,7 @@ h2 {
   background-image: url('cover-image.jpeg');
   background-position: center;
   height: 620px;
+  width: 100%;
   background-size: cover;
   p, h2 {
     font-weight: 330;
@@ -183,23 +190,6 @@ h2 {
   width: auto !important;
 }
 
-.container {
-  width: 100%;
-}
-.container-fluid {
- padding-right:0;
- padding-left:0;
- min-height: 100vh;
-}
-
-// .footer {
-//    width: 100%;
-//    background-color: #222223;
-//    color: white;
-//    text-align: center;
-//    height: 100%;
-// }
-
 .footer {
   background-color: #ef5350;
   text-align: center;
@@ -212,3 +202,21 @@ h2 {
     padding-top: 22px;
   }
 }
+
+.form-article:after {
+  content: "";
+  display: table;
+  padding-bottom: 60px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  }
+
+  .well {
+    margin-top: 20px;
+  }
+
+  .about {
+    margin-top: 170px;
+  }
