@@ -6,7 +6,7 @@
   </div>
 <% else %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2">
       <div align="center"><%= will_paginate %></div>
       <% @articles.each do |article| %>
         <h2><%= link_to article.title, article, id:"title-article" %></h2>
@@ -16,7 +16,7 @@
         <% if article.categories.any? %>
           <p><strong class="more-info">Categories: </strong> <%= render article.categories %></p>
         <% end %>
-        <p><%= sanitize(article.description) %></p>
+        <%= truncate sanitize(article.description, tags: [], attributes: []), length: 50 %>
         <p class="pull-right"><%= link_to 'Read More ', article_path(article)  %>&rarr;</p>
         <hr>
         <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>

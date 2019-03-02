@@ -1,5 +1,8 @@
 <h2 class="text-center">All Categories</h2>
 <div align="center">
+  <%= will_paginate %>
+</div>
+<div align="center">
   <% @categories.each do |category| %>
     <ul class="listing">
       <div class="row">
@@ -16,3 +19,5 @@
   <% end %>
   <%= will_paginate %>
 </div>
+
+<div class="clearfix"></div>

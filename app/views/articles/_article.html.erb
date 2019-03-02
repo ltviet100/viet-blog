@@ -2,7 +2,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="detail-article">
       <h2><%= article.title %></h2>
-      <p><%= truncate sanitize(article.description, tags: [], attributes: []), length: 50 %></p>
+      <%= truncate sanitize(article.description, tags: [], attributes: []) %>
       <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>
         <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
         <%= link_to 'Remove', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
