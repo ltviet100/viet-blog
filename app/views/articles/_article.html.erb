@@ -1,23 +1,25 @@
-<% obj.each do |article| %>
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="detail-article">
-      <h2>
-        <%= link_to article.title, article_path(article) %>
-      </h2>
-      <%= gravatar_for(article.user, size: 30) %>
-      <span class="more-info">Created by: <%= article.username %> | <%= time_ago_in_words(article.created_at) %> ago</span>
-      <p><%= truncate sanitize(article.description, tags: [], attributes: [], length: 150) %></p>
-      <% if params[:controller] != "categories" %>
-        <% if article.categories.any? %>
-            <p>Categories: <%= render article.categories %></p>
+  <div class="listing">
+  <% obj.each do |article| %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="detail-article">
+        <h2>
+          <%= link_to article.title, article_path(article) %>
+        </h2>
+        <%= gravatar_for(article.user, size: 30) %>
+        <span class="more-info">Created by: <%= article.username %> | <%= time_ago_in_words(article.created_at) %> ago</span>
+        <p><%= truncate sanitize(article.description, tags: [], attributes: [], length: 150) %></p>
+        <% if params[:controller] != "categories" %>
+          <% if article.categories.any? %>
+              <p>Categories: <%= render article.categories %></p>
+            <% end %>
           <% end %>
+        <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>
+          <p><%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
+          <%= link_to 'Remove', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></p>
         <% end %>
-      <% if logged_in? && ( current_user == article.user || current_user.admin? ) %>
-        <p><%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
-        <%= link_to 'Remove', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></p>
-      <% end %>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
-<% end %>

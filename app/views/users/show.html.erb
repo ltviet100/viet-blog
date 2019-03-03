@@ -1,26 +1,28 @@
-<div class="text-center">
-  <h3><%= @user.username %>'s Articles</h3>
-  <%= gravatar_for @user %>
+<div class="listing">
+  <div class="text-center">
+    <h3><%= @user.username %>'s Articles</h3>
+    <%= gravatar_for @user %>
+  </div>
+
+  <div class="row">
+    <% if @user_articles.any? %>
+      <div align="center">
+        <%= will_paginate @user_articles %>
+      </div>
+      <%= render 'articles/article', obj: @user_articles %>
+      <div align="center">
+        <%= will_paginate @user_articles %>
+      </div>
+    <% else %>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="well">
+          <h5 style="color: #ef5350;", class="text-center">NO ARTICLE</h5>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div class="row">
-  <% if @user.articles.any? %>
-    <div align="center">
-      <%= will_paginate @user_articles %>
-    </div>
-    <%= render 'articles/article', obj: @user_articles %>
-    <div align="center">
-      <%= will_paginate @user_articles %>
-    </div>
-  <% else %>
-    <div class="col-md-4 col-md-offset-4">
-      <div class="well">
-        <h5 style="color: #ef5350;">NO ARTICLE</h5>
-      </div>
-      <%= link_to 'Back', users_path %>
-    </div>
-  <% end %>
-</div>
 
 
 
